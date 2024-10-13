@@ -1,0 +1,42 @@
+### Get all persons
+GET http://localhost:3002/api/persons/
+Accept: application/json
+
+### Get existing record
+GET http://localhost:3002/api/persons/1
+Accept: application/json
+
+### Get non-existing record
+GET http://localhost:3002/api/persons/a
+Accept: application/json
+
+### Upload a valid record
+POST http://localhost:3002/api/persons/
+Content-Type: application/json
+
+{
+  "name": "Test",
+  "number": "12345678"
+}
+
+### Upload record with missing name
+POST http://localhost:3002/api/persons/
+Content-Type: application/json
+
+{
+  "number": "12345678"
+}
+
+### Upload record with missing number
+POST http://localhost:3002/api/persons/
+Content-Type: application/json
+
+{
+  "name": "Test"
+}
+
+### Delete existing record
+DELETE http://localhost:3002/api/persons/1
+
+### Delete non-existing record
+DELETE http://localhost:3002/api/persons/a
